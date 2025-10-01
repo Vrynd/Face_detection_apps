@@ -56,7 +56,7 @@ class _CameraViewState extends State<CameraView> with WidgetsBindingObserver {
         });
       }
     }).catchError((e) {
-      print('Error initializing camera: $e');
+      debugPrint('Error initializing camera: $e');
     });
   }
 
@@ -133,10 +133,15 @@ class _CameraViewState extends State<CameraView> with WidgetsBindingObserver {
         Align(
           alignment: const Alignment(0.9, 0.9),
           child: FloatingActionButton(
+            backgroundColor: Theme.of(context).colorScheme.primary,
             heroTag: "switch-camera",
             tooltip: "Switch Camera",
             onPressed: () => _onCameraSwitch(),
-            child: const Icon(Icons.cameraswitch),
+            child: Icon(
+              Icons.cameraswitch,
+              size: 26,
+              color: Theme.of(context).colorScheme.primaryContainer,
+            ),
           ),
         ),
       ],

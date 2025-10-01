@@ -10,8 +10,14 @@ class CameraPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Face Detection App'),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: Text(
+          'Face Detection App',
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              fontSize: 24,
+              fontWeight: FontWeight.w600),
+        ),
         centerTitle: true,
       ),
       body: CameraView(),
